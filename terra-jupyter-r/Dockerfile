@@ -115,10 +115,14 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN R -e 'install.packages("BiocManager")' \
+RUN R -e 'install.packages(c("BiocManager", "Seurat","httr","devtools", "fastICA","NMF","rNMF"))' \
     ## check version
     && R -e 'BiocManager::install(version="3.12", ask=FALSE)' \
     && R -e 'BiocManager::install(c( \
+    "GEOquery", \
+    "SingleCellExperiment", \
+    "multtest", \
+    "spdep", \
     "boot", \
     "class", \
     "cluster", \
