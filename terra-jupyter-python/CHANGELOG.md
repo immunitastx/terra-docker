@@ -1,3 +1,53 @@
+## 0.1.2 - 2021-05-05T16:19:57.509127Z
+
+- Update `terra-jupyter-base` to `0.0.20`
+  - [IA-1644] Install crcmod in base image to support GCS composite objects
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-python:0.1.2`
+
+## 0.1.1 - 2021-04-5
+
+- Add bug fix back in for python package ggplot (see https://github.com/yhat/ggpy/issues/662)
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-python:0.1.1`
+
+## 0.1.0 - 2021-03-20
+
+- Update all Python package versions by unpinning them.
+- Add package `plotnine`. Fixes https://github.com/DataBiosphere/terra-docker/issues/126
+- Replace package `tensorflow` with `tensorflow_cpu` to get rid of the warnings about GPUs being unavailable for Terra Cloud Runtimes.
+- Add package `google-resumable-media` as an explicit dependency to ensure a more recent version of it is used. `pandas-gbq` depends on it for table uploads.
+- Work around lack of 'bigquery.readsessions.create' permission [CA-1179] by uninstalling the dependency `google-cloud-bigquery-storage` so that flag `--use_rest_api` can be used with `%%bigquery` to use the older mechanism for data transfer.
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-python:0.1.0`
+
+## 0.0.23 - 2021-01-20T16:00:48.318Z
+
+- Update `terra-jupyter-base` to `0.0.19`
+  - [IA-2472] Turn on debug-level logging when JUPYTER_DEBUG_LOGGING env var is true
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-python:0.0.23`
+
+## 0.0.22 - 2020-12-09T18:50:57.262Z
+
+- [IA-2420] Update to a newer version of pymc3
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-python:0.0.22`
+
+## 0.0.21 - 2020-12-02T17:59:36.411Z
+
+- Update `terra-jupyter-base` to `0.0.18`
+  - bump terra-notebook-utils version to 0.7.0 and move it to base image
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-python:0.0.21`
+
+## 0.0.20 - 2020-11-16T18:11:40.785376Z
+
+- Update `terra-jupyter-base` to `0.0.17`
+  - remove miniconda
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-python:0.0.20`
+
 ## 0.0.19 - 2020-11-10T13:26:19.077Z
 
 - Remove Python package enum34. Fixes https://github.com/DataBiosphere/terra-docker/issues/175

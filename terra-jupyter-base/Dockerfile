@@ -115,7 +115,7 @@ ENV PATH ${PATH:+$PATH:}$USER_INSTALL_DIR/bin
 RUN apt update \
    && apt install -yq software-properties-common \
    && add-apt-repository ppa:deadsnakes/ppa \
-   && apt install -yq python3.7 \
+   && apt install -yq python3.7-dev \
    && update-alternatives --install /usr/local/bin/python3 python3 /usr/bin/python3.7 1 \
    && apt-get -yq install python3-pip \
    && /usr/local/bin/python3 -m pip install --upgrade pip
@@ -134,7 +134,10 @@ RUN pip3 -V \
  # for jupyter_delocalize.py and jupyter_notebook_config.py
  && pip3 install tornado==5.1.1 \
  && pip3 install requests \
+ && pip3 install six==1.15.0 \
  && pip3 install firecloud==0.16.25 \
+ && pip3 install terra-notebook-utils==0.7.0 \
+ && pip3 install crcmod \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -150,13 +153,8 @@ ENV PIP_USER=true
 # pip docs: https://pip.pypa.io/en/stable/reference/pip_install/#cmdoption-user
 ENV PATH="${PATH}:/home/jupyter-user/.local/bin"
 
-#######################
-# Install Conda
-#######################
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh \
-  && bash /tmp/miniconda.sh -b -p $HOME/miniconda \
-  && echo 'eval "$(/home/jupyter-user/miniconda/bin/conda shell.bash hook)"' >> /home/jupyter-user/.bashrc \
-  && echo 'cd /home/jupyter-user/notebooks' >> /home/jupyter-user/.bashrc
+# Default terminal directory should be where PD is mounted
+RUN echo 'cd /home/jupyter-user/notebooks' >> /home/jupyter-user/.bashrc
 
 #######################
 # Utilities
@@ -177,7 +175,6 @@ RUN chown -R $USER:users $JUPYTER_HOME \
  && cp $JUPYTER_HOME/custom/extension_entry_jupyter.js $HOME/.jupyter/custom/custom.js \
  && cp $JUPYTER_HOME/custom/safe-mode.js $HOME/.jupyter/custom/ \
  && cp $JUPYTER_HOME/custom/edit-mode.js $HOME/.jupyter/custom/ \
- && $JUPYTER_HOME/scripts/extension/jupyter_install_lab_extension.sh $JUPYTER_HOME/custom/extension_entry_jupyterlab.js \
  && mkdir $JUPYTER_HOME/nbconfig \
  && $JUPYTER_HOME/scripts/kernel/kernelspec.sh $JUPYTER_HOME/scripts/kernel /usr/local/share/jupyter/kernels
 

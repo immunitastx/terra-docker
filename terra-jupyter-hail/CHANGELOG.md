@@ -1,3 +1,62 @@
+## 0.1.2 - 2021-05-05T16:19:57.485458Z
+
+- Update `terra-jupyter-base` to `0.0.20`
+  - [IA-1644] Install crcmod in base image to support GCS composite objects
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-hail:0.1.2`
+
+## 0.1.1 - 2021-04-05T17:29:05.415Z
+
+- Update `terra-jupyter-python` to `0.1.1`
+  - fix ggplot import bug
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-hail:0.1.1`
+
+## 0.1.0 - 2021-03-20
+
+- Update `terra-jupyter-python` to `0.1.0`
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-hail:0.1.0`
+
+## 0.0.31 - 2021-02-05
+
+- Update `hail` to `0.2.62`
+  - See https://hail.is/docs/0.2/change_log.html#version-0-2-61 for details.
+- Update `pandas` to `1.1.x`
+
+## 0.0.30 - 2021-01-20T16:00:48.299Z
+
+- Update `terra-jupyter-base` to `0.0.19`
+  - [IA-2472] Turn on debug-level logging when JUPYTER_DEBUG_LOGGING env var is true
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-hail:0.0.30`
+
+## 0.0.29 - 2020-12-09T18:50:57.298Z
+
+- Update `terra-jupyter-python` to `0.0.22`
+  - [IA-2420] Update to a newer version of pymc3
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-hail:0.0.29`
+
+## 0.0.28 - 2020-12-03
+
+- Update `hail` to `0.2.61`
+   - See https://hail.is/docs/0.2/change_log.html#version-0-2-61 for details.
+
+## 0.0.27 - 2020-12-02T17:59:36.390Z
+
+- Update `terra-jupyter-base` to `0.0.18`
+  - bump terra-notebook-utils version to 0.7.0 and move it to base image
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-hail:0.0.27`
+
+## 0.0.26 - 2020-11-16T18:11:40.758876Z
+
+- Update `terra-jupyter-base` to `0.0.17`
+  - remove miniconda
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-hail:0.0.26`
+
 ## 0.0.25 - 2020-11-10T13:26:19.112Z
 
 - Update `terra-jupyter-python` to `0.0.19`

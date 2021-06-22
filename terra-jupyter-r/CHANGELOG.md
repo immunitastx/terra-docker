@@ -1,3 +1,45 @@
+## 1.0.15 - 2021-06-07
+
+- Update R to 4.1.0 and Bioconductor version to 3.13.
+- Update terra-jupyter-r image to `1.0.15`
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-r:1.0.15`
+
+## 1.0.14 - 2021-05-05T16:19:57.531117Z
+
+- Update `terra-jupyter-base` to `0.0.20`
+  - [IA-1644] Install crcmod in base image to support GCS composite objects
+- Fix `libsbml5` installation
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-r:1.0.14`
+
+## 1.0.13 - 2021-02-10T00:36:57.099Z
+
+- [IA-2511] Install Seurat R package in terra-jupyter-r image
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-r:1.0.13`
+
+## 1.0.12 - 2021-01-20T16:00:48.341Z
+
+- Update `terra-jupyter-base` to `0.0.19`
+  - [IA-2472] Turn on debug-level logging when JUPYTER_DEBUG_LOGGING env var is true
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-r:1.0.12`
+
+## 1.0.11 - 2020-12-02T17:59:36.434Z
+
+- Update `terra-jupyter-base` to `0.0.18`
+  - bump terra-notebook-utils version to 0.7.0 and move it to base image
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-r:1.0.11`
+
+## 1.0.10 - 2020-11-16T18:11:40.819538Z
+
+- Update `terra-jupyter-base` to `0.0.17`
+  - remove miniconda
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-r:1.0.10`
+
 ## 1.0.9 - 2020-11-04T21:43:54.848Z
 
 - Version upgrades: Bioconductor version 3.12 and R version 4.0.3

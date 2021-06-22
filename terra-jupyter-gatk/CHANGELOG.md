@@ -1,3 +1,65 @@
+## 1.1.3 - 2021-06-07T19:39:55.994874Z
+
+- Update `terra-jupyter-r` to `1.0.16`
+  - Update R to 4.1.0 and Bioconductor version to 3.13.
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-gatk:1.1.3`
+
+## 1.1.2 - 2021-05-05T16:19:57.539858Z
+
+- Update `terra-jupyter-base` to `0.0.20`
+  - [IA-1644] Install crcmod in base image to support GCS composite objects
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-gatk:1.1.2`
+
+## 1.1.1 - 2021-04-05T17:29:05.428Z
+
+- Update `terra-jupyter-python` to `0.1.1`
+  - fix ggplot import bug
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-gatk:1.1.1`
+
+## 1.1.0 - 2021-03-20
+
+- Update `terra-jupyter-python` to `0.1.0`
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-gatk:1.1.0`
+
+## 1.0.15 - 2021-02-10T00:36:57.172Z
+
+- Update `terra-jupyter-r` to `1.0.13`
+  - [IA-2511] Install Seurat R package in terra-jupyter-r image
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-gatk:1.0.15`
+
+## 1.0.14 - 2021-01-20T16:00:48.352Z
+
+- Update `terra-jupyter-base` to `0.0.19`
+  - [IA-2472] Turn on debug-level logging when JUPYTER_DEBUG_LOGGING env var is true
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-gatk:1.0.14`
+
+## 1.0.13 - 2020-12-09T18:50:57.311Z
+
+- Update `terra-jupyter-python` to `0.0.22`
+  - [IA-2420] Update to a newer version of pymc3
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-gatk:1.0.13`
+
+## 1.0.12 - 2020-12-02T17:59:36.443Z
+
+- Update `terra-jupyter-base` to `0.0.18`
+  - bump terra-notebook-utils version to 0.7.0 and move it to base image
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-gatk:1.0.12`
+
+## 1.0.11 - 2020-11-16T18:11:40.830329Z
+
+- Update `terra-jupyter-base` to `0.0.17`
+  - remove miniconda
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-gatk:1.0.11`
+
 ## 1.0.10 - 2020-11-10T13:26:19.126Z
 
 - Update `terra-jupyter-python` to `0.0.19`

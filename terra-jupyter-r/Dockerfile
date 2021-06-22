@@ -1,11 +1,11 @@
-FROM us.gcr.io/broad-dsp-gcr-public/terra-jupyter-base:0.0.16
+FROM us.gcr.io/broad-dsp-gcr-public/terra-jupyter-base:0.0.20
 USER root
 
 COPY scripts $JUPYTER_HOME/scripts
 
 # Add env vars to identify binary package installation
 ENV TERRA_R_PLATFORM="terra-jupyter-r"
-ENV TERRA_R_PLATFORM_BINARY_VERSION=0.99.1
+ENV TERRA_R_PLATFORM_BINARY_VERSION=3.13.0
 
 
 RUN find $JUPYTER_HOME/scripts -name '*.sh' -type f | xargs chmod +x \
@@ -83,41 +83,36 @@ RUN apt-get update \
 	xfonts-100dpi \
 	xfonts-75dpi \
 	biber \
+        libsbml5-dev \
+        libzmq3-dev \
     && ln -s /usr/lib/gcc/x86_64-linux-gnu/7/libgfortran.so /usr/lib/x86_64-linux-gnu/libgfortran.so \
+    && ln -s /usr/lib/gcc/x86_64-linux-gnu/7/libstdc++.so /usr/lib/x86_64-linux-gnu/libstdc++.so \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install libsbml
-RUN cd /tmp \
-    && curl -O https://s3.amazonaws.com/linux-provisioning/libSBML-5.10.2-core-src.tar.gz \
-    && tar zxf libSBML-5.10.2-core-src.tar.gz \
-    && cd libsbml-5.10.2 \
-    && ./configure --enable-layout \
-    && make \
-    && make install \
-    && ldconfig \
-    && rm -rf /tmp/libsbml-5.10.2 \
-    && rm -rf /tmp/libSBML-5.10.2-core-src.tar.gz
+ENV LIBSBML_CFLAGS="-I/usr/include"
+ENV LIBSBML_LIBS="-lsbml"
+RUN echo 'export LIBSBML_CFLAGS="-I/usr/include"' >> /etc/profile \
+    && echo 'export LIBSBML_LIBS="-lsbml"' >> /etc/profile
 
 ## set pip3 to run as root, not as jupyter-user
 ENV PIP_USER=false
 
 ## Install python packages needed for a few Bioc packages
 RUN apt-get update \
-    && apt-get install -yq --no-install-recommends python3.7-dev \
+    && apt-get install -yq --no-install-recommends \
     && pip3 -V \
     && pip3 install --upgrade pip \
     && pip3 install cwltool==1.0.20190228155703 \
     && pip3 install pandas==0.25.3 \
- 		&& pip3 install terra-notebook-utils==0.2.1 \
-    && pip3 install pyyaml \
+    && pip3 install pyyaml==5.3.1 \
     && pip3 install scikit-learn==0.21.3 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN R -e 'install.packages(c("BiocManager", "Seurat","httr","devtools", "fastICA","NMF","rNMF"))' \
     ## check version
-    && R -e 'BiocManager::install(version="3.12", ask=FALSE)' \
+    && R -e 'BiocManager::install(version="3.13", ask=FALSE)' \
     && R -e 'BiocManager::install(c( \
     "GEOquery", \
     "SingleCellExperiment", \
@@ -136,6 +131,7 @@ RUN R -e 'install.packages(c("BiocManager", "Seurat","httr","devtools", "fastICA
     "nlme", \
     "nnet", \
     "rpart", \
+    "Seurat", \
     "spatial", \
     "survival", \
     # Jupyter notebook essentials

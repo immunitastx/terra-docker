@@ -1,3 +1,100 @@
+## 1.1.6 - 2021-06-07T19:39:56.024375Z
+
+- Update `terra-jupyter-r` to `1.0.16`
+  - Update R to 4.1.0 and Bioconductor version to 3.13.
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.1.6`
+
+## 1.1.5 - 2021-05-24
+
+- Reduce unnecessary package upgrades.
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.1.5`
+
+## 1.1.4 - 2021-05-24
+
+- Add bcftools
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.1.4`
+
+## 1.1.3 - 2021-05-05T16:19:57.558388Z
+
+- Update `terra-jupyter-base` to `0.0.20`
+  - [IA-1644] Install crcmod in base image to support GCS composite objects
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.1.3`
+
+## 1.1.2 - 2021-04-21
+
+- Refactor to terra-jupyter-gatk:1.1.1 as the base image
+  - GATK now included
+  - samtools now included
+- Install bolt-lmm
+- Install regenie
+- Install Nirvana
+- Install R packages: SAIGE, GENESIS
+- Update Plink version
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.1.2`
+
+## 1.1.1 - 2021-04-05T17:29:05.447Z
+
+- Update `terra-jupyter-python` to `0.1.1`
+  - fix ggplot import bug
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.1.1`
+
+## 1.1.0 - 2021-03-20
+
+- Update `terra-jupyter-python` to `0.1.0`
+- Remove more Python package overrides which are no longer needed due to updates in the base Python image.
+- Add nbstripout and enable it globally so that its in effect for any git repository cloned to the VM.
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.1.0`
+
+## 1.0.23 - 2021-02-22
+
+- Remove varstore scripts / GATK jar
+- Upgrade Hail
+- Remove some Python package / R lib overrides which are no longer needed
+
+## 1.0.22 - 2021-02-10T00:36:57.205Z
+
+- Update `terra-jupyter-r` to `1.0.13`
+  - [IA-2511] Install Seurat R package in terra-jupyter-r image
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.0.22`
+
+## 1.0.21 - 2021-01-20T16:00:48.370Z
+
+- Update `terra-jupyter-base` to `0.0.19`
+  - [IA-2472] Turn on debug-level logging when JUPYTER_DEBUG_LOGGING env var is true
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.0.21`
+
+## 1.0.20 - 2020-12-09T18:50:57.334Z
+
+- Update `terra-jupyter-python` to `0.0.22`
+  - [IA-2420] Update to a newer version of pymc3
+- Update hail version to `0.2.61`
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.0.20`
+
+## 1.0.19 - 2020-12-02T17:59:36.458Z
+
+- Update `terra-jupyter-base` to `0.0.18`
+  - bump terra-notebook-utils version to 0.7.0 and move it to base image
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.0.19`
+
+## 1.0.18 - 2020-11-16T18:11:40.848741Z
+
+- Remove dependency on miniconda
+- Update `terra-jupyter-base` to `0.0.17`
+  - remove miniconda
+
+Image URL: `us.gcr.io/broad-dsp-gcr-public/terra-jupyter-aou:1.0.18`
+
 ## 1.0.17 - 2020-11-10T13:26:19.148Z
 
 - Update `terra-jupyter-python` to `0.0.19`
